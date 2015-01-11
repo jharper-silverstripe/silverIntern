@@ -5,10 +5,6 @@ class ProjectsHolder extends Page{
 	private static $allowed_children = array(
 		'Project'
 	);
-
-	// private static $has_many = array(
-	// 	'Projects' => 'Project'
-	// );
 }
 
 class ProjectsHolder_Controller extends Page_Controller{
