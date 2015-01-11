@@ -2,7 +2,9 @@
 class ProjectExtension extends DataExtension{
 	private static $db = array(
 		"EnableRegistrations" => "Boolean",
-		'MaxParticipants' => 'Int'
+		'MaxParticipants' => 'Int',
+		"Region" => "Enum('Northland, Auckland, Waikato, Bay of Plenty, Gisborne, Hawkes Bay, Taranaki,
+		 Manawatu-Whanganui, Wellington, Tasman, Nelson, Marlborough, West Coast, Canterbury, Otago, Southland')"
 	);
 
 	private static $has_many = array(
@@ -27,8 +29,13 @@ class ProjectExtension extends DataExtension{
 
                 )
             );
+
         }    
     }
+
+ //    public static function getRegions() {
+	// 	return singleton('Event')->dbObject('Region')->enumValues();
+	// }
 
 
 

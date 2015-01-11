@@ -25,7 +25,10 @@ class Project extends Page{
 
 		$fields = parent::getCMSFields();
 		$studentField = new DropdownField('StudentID', 'Student', Student::get()->map('ID', 'Name'));
-		$fields->addFieldToTab('Root.Main', $studentField, 'Content');		
+		$fields->addFieldToTab('Root.Main', $studentField, 'Content');	
+
+		$regionDropDown = new DropdownField('Region', 'Region', $this->owner->dbObject('Region')->enumValues());
+		$fields->addFieldToTab('Root.Main', $regionDropDown, 'Content');	
 
 		//gridfield for mentors
 		$mentorField = new GridField(
@@ -94,7 +97,10 @@ class Project_Controller extends Page_Controller{
  //        return $list;
  //    }
 
+	 // public function CreateProject(){
 
+
+	 // }
 
 
 
